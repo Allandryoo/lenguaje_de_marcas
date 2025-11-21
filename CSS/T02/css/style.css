@@ -63,11 +63,27 @@ nav.menu a {
 nav.menu a:hover {
     text-decoration: none;
 }
-ul a{
+ul a:link{
     color: #2e7d32;
     font-size: 1.2em;
     text-decoration: none;
 }
+ul a:visited{
+    color: #596159;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+ul a:hover{
+    color: #612cde;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+ul a:active{
+    color: #db30bc;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
 img {
     width: 300px;
     height: 300px;
