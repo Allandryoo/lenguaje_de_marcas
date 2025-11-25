@@ -2,95 +2,26 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página de Animales</title>
+  <title>Ejemplo Sangría</title>
   <style>
-    /* Estilo general */
-    body {
-      background-color: #f5f5dc; /* beige claro */
-      color: #333333; /* gris oscuro para texto */
-      font-family: serif, sans-serif;
-      margin: 0;
-    }
-
-    /* Menú principal */
-    nav.menu {
-      background: linear-gradient(to right, #2e7d32, #8d6e63); /* verde bosque → marrón tierra */
-      padding: 15px;
-      text-align: center;
-    }
-
-    nav.menu a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    nav.menu a:hover {
-      text-decoration: underline;
-    }
-
-    /* Título principal */
-    .titulo-articulo {
-      text-align: center;
-      color: #2e7d32; /* verde bosque */
-      margin-top: 40px;
-      font-size: 2.2em;
-    }
-
-    /* Contenido */
-    .contenido {
-      max-width: 800px;
-      margin: 40px auto;
-      line-height: 1.6;
-    }
-
-    /* Caja destacada */
-    .caja {
-      background-color: #e0e0d1; /* tono suave */
-      border-left: 5px solid #2e7d32;
-      padding: 15px;
-      margin: 20px 0;
+    p {
+      text-indent: 100px; /* sangría en la primera línea */  /* espacio entre líneas */
+      max-width: 600px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
     }
   </style>
 </head>
 <body>
+  <p>
+    Este es un párrafo con sangría en la primera línea. La propiedad
+    <code>text-indent</code> permite controlar cuánto espacio se deja antes
+    de empezar el texto.
+  </p>
 
-  <!-- Menú principal -->
-  <nav class="menu">
-    <a href="#">Inicio</a>
-    <a href="#">Mamíferos</a>
-    <a href="#">Aves</a>
-    <a href="#">Reptiles</a>
-    <a href="#">Contacto</a>
-  </nav>
-
-  <!-- Título -->
-  <h1 class="titulo-articulo">Información sobre Animales</h1>
-
-  <!-- Contenido -->
-  <div class="contenido">
-    <p>
-      Los animales forman parte esencial de nuestro planeta. Cada especie cumple un papel
-      importante en el equilibrio de los ecosistemas.
-    </p>
-
-    <div class="caja">
-      <h2>Mamíferos</h2>
-      <p>
-        Los mamíferos son animales vertebrados que se caracterizan por tener pelo y alimentar
-        a sus crías con leche. Ejemplos: leones, elefantes, ballenas.
-      </p>
-    </div>
-
-    <div class="caja">
-      <h2>Aves</h2>
-      <p>
-        Las aves poseen plumas y la mayoría puede volar. Ejemplos: águilas, pingüinos, colibríes.
-      </p>
-    </div>
-  </div>
-
+  <p>
+    Otro párrafo con la misma sangría aplicada. Es útil para dar formato
+    a textos largos y mejorar la legibilidad.
+  </p>
 </body>
 </html>
