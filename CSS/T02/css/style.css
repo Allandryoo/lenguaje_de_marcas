@@ -89,14 +89,17 @@ p {
 }
 p.normal{
     font-style: normal;
+    text-decoration: underline;
 }
 p.italic{
     font-style: italic;
     font-size: 1.1em;
+    text-decoration: line-through;
 }
 p.oblique{
     font-style: oblique;
     font-size: 1.1em;
+    text-decoration: overline;
 }
 img {
     width: 300px;
