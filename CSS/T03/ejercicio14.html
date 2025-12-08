@@ -10,12 +10,12 @@
 
     .p2 {
       display: inline; 
-      background: red;
+      background: rgb(255, 88, 88);
     }
 
     .p3 {
       display: block; 
-      background: blue;
+      background: rgb(119, 119, 255);
     }
 
     .p4 {
@@ -27,9 +27,9 @@
   </style>
 </head>
 <body>
-  <p class="p1">este parrafo esta oculto</p>
-  <p class="p2">Este parrafo </p> <p>esta en la misma linea</p>
-  <p class="p3">este párrafo se muestra como bloque, ocupando todo el ancho.</p>
-  <p class="p4">este párrafo es inline-block, se comporta como inline pero admite dimensiones.</p>
+  <p class="p1">Este parrafo esta oculto</p><!--none oculta el contenido-->
+  <p class="p2">Este parrafo esta </p> <p class="p2"> en la misma linea</p><!--inline permite mas parrafos en la misma linea-->
+  <p class="p3">Este parrafo ocupa todo el ancho de la linea</p><!--block hace que el texto ocupe todo el ancho de la linea-->
+  <p class="p4">Este parrafo se comporta como inline pero admite dimensiones</p><!--inline-block hace lo mismo que inline pero permite dimensionar la caja-->
 </body>
 </html>
