@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #6362d3;
+}
+.header-fijo {
+    margin: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #4bae51;
+}
+.contenedor-lienzo {
+    margin: 100px 40px;
+    background-color: white;
+    border: 5px dashed gray;
+}
