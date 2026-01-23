@@ -1,0 +1,31 @@
+.caja-contenedor-principal {
+    width: 100%;
+    max-height: 100%;
+    background-color: rgb(238, 28, 28);
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 10% 1fr 10%;
+}
+.header {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+    background-color: aqua;
+}
+.contenedor-izquierdo {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: rgb(243, 39, 192);
+}
+.contenedor-derecho {
+    grid-column: 2 /span 3;
+    grid-row: 2;
+    background-color: rgb(185, 217, 44);
+}
+.footer {
+    grid-column: 1 /span 4;
+    grid-row: 3;
+    background-color: rgb(131, 43, 226);
+}
+.lista-canciones {
+    display: flex;
+}
