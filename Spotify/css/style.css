@@ -18,30 +18,64 @@ body {
     gap: 1vh;
     padding: 0.5vh;
 }
+/*Cabecera de la pagina*/
 .header {
     grid-area: header;
-    background-color: aqua;
+    background-color: rgb(63, 196, 216);
     border-radius: 5px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+.header img {
+    width: auto;
+    height: 100%;
+}
+/*Elementos de la cabecera*/
+.logo {
+    background-color: #ffffff;
+    height: 90%;
+    width: auto;
+    border-radius: 50%;
+}
+.casa {
+    background-color: #ad0e0e;
+    height: 90%;
+    width: auto;
+    border-radius: 50%;
+}
+.buscador {
+    background-color: #501d1d; 
+    height: 90%; 
+    width: 30%; 
+    border-radius: 999px; 
+    display: flex; 
+    align-items: center; /* centra verticalmente */ 
+    justify-content: space-between; /* distribuye horizontalmente */ 
+    padding: 0 0.4%; /* espacio interno a los lados */ 
+    color: #721414; 
+    font-size: 15px; gap: 10px;
+}
+.material-symbols-outlined {
+    color: #b73333;
+    font-size: 20px;
+}
+/*Lado izquierda*/
 .contenedor-izquierdo {
     grid-area: l-content;
     background-color: rgb(243, 39, 192);
     border-radius: 5px;
     overflow: hidden;
 }
+/*Lado derecho*/
 .contenedor-derecho {
     grid-area: r-content;
     background-color: rgb(185, 217, 44);
     border-radius: 5px;
     overflow: scroll;
 }
-.footer {
-    grid-area: footer;
-    background: linear-gradient(to right, #ae2896, #509bf5);
-    border-radius: 5px;
-    overflow: hidden;
-}
+/*Contenido lado derecho*/
 .contenido-cancion {
     display: flex;
     flex-direction: row;
@@ -52,4 +86,11 @@ img {
 }
 img.artista {
     border-radius: 50%;
+}
+/*Pie de la pagina*/
+.footer {
+    grid-area: footer;
+    background: linear-gradient(to right, #ae2896, #509bf5);
+    border-radius: 5px;
+    overflow: hidden;
 }
