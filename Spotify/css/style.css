@@ -21,24 +21,27 @@ body {
 /*Cabecera de la pagina*/
 .header {
     grid-area: header;
+    position: relative;
+    height: 100%;
     width: 100%;
     background-color: rgb(63, 196, 216);
     border-radius: 5px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 }
 .header img {
-    width: auto;
-    height: 80%;
+    width: 30px;
+    height: 30px;
 }
 /*Elementos de la cabecera*/
 .logo {
     background-color: #ffffff;
-    height: 90%;
+    height: auto;
     width: auto;
     border-radius: 50%;
-    align-self: flex-start;
+    justify-self: flex-start;
 }
 .buscador {
     background-color: #501d1d; 
@@ -46,22 +49,28 @@ body {
     width: 30%; 
     border-radius: 999px; 
     display: flex; 
-    align-items: center; /* centra verticalmente */ 
-    justify-content: space-between; /* distribuye horizontalmente */ 
-    padding: 0 0.4%; /* espacio interno a los lados */ 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0 0.4%;  
     color: #721414; 
     font-size: 15px; gap: 10px;
     align-self: center;
 }
 .header-button {
+    background-color: #721414;
     display: flex;
     flex-direction: row;
     align-items: center;
-    align-self: flex-end;
+    gap: 10px;
 }
-.material-symbols-outlined {
-    color: #b73333;
-    font-size: 20px;
+.sec-derecha {
+    padding: 1em;
+    background-color: black;
+    color: grey;
+}
+.inicio {
+    padding: 1em;
+    background-color: white;
 }
 /*Lado izquierda*/
 .contenedor-izquierdo {
