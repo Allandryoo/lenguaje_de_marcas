@@ -126,8 +126,30 @@ body {
 }
 /*Contenido lado izquierdo*/
 .sec-izq-cab {
+    display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+}
+.texto-biblioteca {
+    color: #b3b3b3;
     font-weight: bold;
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.boton-crear-biblioteca {
+    background-color: #1f1f1f;
+    color: #b3b3b3;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 999px;
+}
+.boton-crear-biblioteca:hover {
+    background-color: #353535;
 }
 .sec-izq-cuerpo {
     flex-basis: 350px;
@@ -143,9 +165,59 @@ body {
     border-radius: 8px;
     padding: 20px;
 }
+.titulo-izq {
+            color: white;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.descripcion-izq {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
 .sec-izq-pie {
-    background-color: #2a7214b2;
-    flex: 3;
+    margin-top: auto;
+    padding-bottom: 32px;
+}
+.contenedor-enlaces {
+    display: flex;
+    flex-wrap: wrap; /* Para que se amontonen como en la foto */
+    gap: 12px 15px;
+    margin-bottom: 32px;
+}
+.contenedor-enlaces a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 11px;
+}
+.contenedor-enlaces a:hover {
+    text-decoration: underline;
+}
+.boton-idioma-global {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #878787;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.boton-idioma-global:hover {
+    border-color: white;
+    transform: scale(1.04);
+}
+.boton-idioma-global img {
+    width: 2vh;
+    height: 2vh;
+
 }
 /*Lado derecho*/
 .contenedor-derecho {
@@ -153,8 +225,33 @@ body {
     background-color: rgb(185, 217, 44);
     border-radius: 5px;
     overflow: scroll;
+    padding: 20px
 }
 /*Contenido lado derecho*/
+.cabecera-cancion {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+.cabecera-cancion h2 { 
+    color: #b3b3b3;
+    font-size: 1.4rem; 
+    text-decoration: none;
+    margin: 0;
+}
+.cabecera-cancion h2:hover {
+    text-decoration: underline;
+}
+.mostrar-todos { 
+    color: #b3b3b3; 
+    font-size: 0.85rem; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+.mostrar-todos:hover { 
+    text-decoration: underline; 
+}
 .contenido-cancion {
     display: flex;
     flex-direction: row;
@@ -183,12 +280,13 @@ img.artista {
     font-size: 0.8rem;
     margin: 0;
 }
-.sec-izq-cuerpo button{
+.sec-izq-caja button{
     background-color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: bold;
-    margin-top: 15px;
-    cursor: pointer;
+            color: black;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
 }
