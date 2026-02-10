@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Navbar Clone</title>
+    <style>
+        /* Reset básico para evitar márgenes extra */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000000; /* Fondo negro de Spotify */
+            padding: 10px;
+        }
+
+        /* Contenedor principal con Flexbox */
+        .navbar {
+            display: flex;
+            align-items: center; /* Centra verticalmente */
+            justify-content: space-between; /* Separa los grupos de elementos */
+            background-color: #000000;
+            padding: 8px 16px;
+            color: #b3b3b3; /* Gris claro de Spotify */
+        }
+
+        /* Grupo de la izquierda: Logo */
+        .nav-left .logo {
+            width: 32px;
+            height: 32px;
+            filter: invert(1); /* Convierte el logo a blanco si es negro */
+        }
+
+        /* Grupo central: Home y Buscador */
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-grow: 1;
+            max-width: 500px;
+            margin: 0 20px;
+        }
+
+        .home-icon {
+            background-color: #1f1f1f;
+            border-radius: 50%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #1f1f1f;
+            border-radius: 500px; /* Bordes muy redondeados */
+            padding: 6px 12px;
+            flex-grow: 1;
+            border: 1px solid transparent;
+        }
+
+        .search-bar:hover {
+            background-color: #2a2a2a;
+            border-color: #333;
+        }
+
+        .search-input {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 8px;
+            width: 100%;
+            outline: none;
+        }
+
+        /* Grupo de la derecha: Enlaces y Botones */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #b3b3b3;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .nav-link:hover {
+            color: white;
+            transform: scale(1.04);
+        }
+
+        .divider {
+            width: 1px;
+            height: 25px;
+            background-color: #b3b3b3;
+        }
+
+        /* Botón de Iniciar Sesión destacado */
+        .btn-login {
+            background-color: white;
+            color: black;
+            border-radius: 500px;
+            padding: 12px 32px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        .btn-login:hover {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify" class="logo">
+        </div>
+
+        <div class="nav-center">
+            <div class="home-icon">
+                <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M12.5 3.11l6.31 5.048V20.34H14.5v-7.072h-5v7.072H3.19V8.158l6.31-5.048a2 2 0 012.5 0z"></path></svg>
+            </div>
+            <div class="search-bar">
+                <svg width="20" height="20" fill="#b3b3b3" viewBox="0 0 24 24"><path d="M10.533 1.27a9.262 9.262 0 105.741 16.523l4.705 4.705a1.131 1.131 0 001.6-1.6l-4.705-4.705A9.262 9.262 0 0010.533 1.27zm0 2.262a7 7 0 110 14 7 7 0 010-14z"></path></svg>
+                <input type="text" class="search-input" placeholder="¿Qué quieres reproducir?">
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <a href="#" class="nav-link">Premium</a>
+            <a href="#" class="nav-link">Asistencia</a>
+            <a href="#" class="nav-link">Descargar</a>
+            <div class="divider"></div>
+            <a href="#" class="nav-link">Registrarte</a>
+            <button class="btn-login">Iniciar sesión</button>
+        </div>
+    </header>
+
+</body>
+</html>
