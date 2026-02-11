@@ -141,9 +141,10 @@ body {
 
 .boton-crear-biblioteca {
     background-color: #1f1f1f;
-    color: #b3b3b3;
+    color: #c7c7c7;
     border: none;
     font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
     padding: 4px 8px;
     border-radius: 999px;
@@ -151,19 +152,23 @@ body {
 .boton-crear-biblioteca:hover {
     background-color: #353535;
 }
-.sec-izq-cuerpo {
-    flex-basis: 350px;
-    background-color: #121212;
-    border-radius: 8px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
 .sec-izq-caja {
     background-color: #1f1f1f;
     border-radius: 8px;
     padding: 20px;
+}
+.sec-izq-caja button {
+    background-color: white;
+    color: black;
+    border-radius: 500px;
+    padding: 8px 24px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+.sec-izq-caja button:hover {
+    transform: scale(1.05);
 }
 .titulo-izq {
             color: white;
@@ -222,10 +227,10 @@ body {
 /*Lado derecho*/
 .contenedor-derecho {
     grid-area: r-content;
-    background-color: rgb(185, 217, 44);
+    background-color: #121212;
     border-radius: 5px;
     overflow: scroll;
-    padding: 20px
+    padding: 20px 0 20px 20px; 
 }
 /*Contenido lado derecho*/
 .cabecera-cancion {
@@ -237,24 +242,80 @@ body {
 .cabecera-cancion h2 { 
     color: #b3b3b3;
     font-size: 1.4rem; 
-    text-decoration: none;
     margin: 0;
 }
-.cabecera-cancion h2:hover {
+.cabecera-cancion a {
+    text-decoration: none;
+}
+.cabecera-cancion a:hover {
     text-decoration: underline;
+    color: #b3b3b3;
 }
 .mostrar-todos { 
     color: #b3b3b3; 
     font-size: 0.85rem; 
     text-decoration: none; 
     font-weight: bold; 
+    margin-right: 30px;
 }
 .mostrar-todos:hover { 
     text-decoration: underline; 
 }
 .contenido-cancion {
-    display: flex;
-    flex-direction: row;
+    display: flex;   
+    gap: 24px;    
+    overflow-x: auto;          
+    overflow-y: hidden;   
+    padding-bottom: 10px;      
+
+}
+.contenido-cancion::-webkit-scrollbar {
+    display: none;
+}
+.tarjeta {
+    background-color: #181818;
+    padding: 16px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+.tarjeta:hover { 
+    background-color: #282828; 
+}
+
+.tarjeta img {
+    width: 16vh;
+    height: 16vh;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+.mini {
+    background-color: #b3b3b3;
+    color: #121212;
+    padding: 0 3px;
+    font-size: 0.6rem;
+    border-radius: 2px;
+    margin-right: 5px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+/* Estilo específico para la sección de Artistas */
+
+
+.tarjeta h3 {
+    font-size: 0.95rem;
+    color: #b3b3b3;
+    margin: 0 0 8px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tarjeta p {
+    color: #b3b3b3;
+    font-size: 0.8rem;
+    margin: 0;
+    font-weight: 500;
 }
 img {
     width: 16vh;
@@ -275,18 +336,20 @@ img.artista {
     align-items: center;
     color: white;
 }
-
 .footer p {
     font-size: 0.8rem;
     margin: 0;
 }
-.sec-izq-caja button{
+.footer button {
     background-color: white;
-            color: black;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 14px;
-            cursor: pointer;
+    color: black;
+    border-radius: 500px;
+    padding: 12px 32px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+.footer button:hover {
+    transform: scale(1.05);
 }
