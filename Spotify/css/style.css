@@ -28,11 +28,11 @@ body {
     grid-area: header;
     position: relative;
     display: flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: space-between; /* Separa los grupos de elementos */
+    align-items: center; 
+    justify-content: space-between; 
     background-color: #000;
     padding: 8px 16px;
-    color: #b3b3b3; /* Gris claro de Spotify */
+    color: #b3b3b3; 
 }
 .header img {
     width: 30px;
@@ -127,9 +127,9 @@ body {
 /*Contenido lado izquierdo*/
 .sec-izq-cab {
     display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
 }
 .texto-biblioteca {
     color: #b3b3b3;
@@ -138,7 +138,6 @@ body {
     align-items: center;
     gap: 12px;
 }
-
 .boton-crear-biblioteca {
     background-color: #1f1f1f;
     color: #c7c7c7;
@@ -188,7 +187,7 @@ body {
 }
 .contenedor-enlaces {
     display: flex;
-    flex-wrap: wrap; /* Para que se amontonen como en la foto */
+    flex-wrap: wrap;
     gap: 12px 15px;
     margin-bottom: 32px;
 }
@@ -299,9 +298,6 @@ body {
     font-weight: bold;
     vertical-align: middle;
 }
-/* Estilo específico para la sección de Artistas */
-
-
 .tarjeta h3 {
     font-size: 0.95rem;
     color: #b3b3b3;
@@ -310,7 +306,6 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .tarjeta p {
     color: #b3b3b3;
     font-size: 0.8rem;
