@@ -151,6 +151,12 @@ body {
 .boton-crear-biblioteca:hover {
     background-color: #353535;
 }
+.contenido {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    gap: 15px;
+}
 .sec-izq-caja {
     background-color: #1f1f1f;
     border-radius: 8px;
