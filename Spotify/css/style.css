@@ -424,15 +424,14 @@ img.artista {
 
     /* Logo más grande */
     .logo {
-        background: none;
+        background-color: white;
         display: flex;
         align-items: center;
     }
     .logo img {
-        width: 110px;
+        width: 40px;
         height: auto;
         border-radius: 0;
-        filter: invert(1); /* Ajusta según tu SVG */
     }
 
     /* El botón "Iniciar sesión" se convierte en "Open App" */
@@ -583,8 +582,8 @@ img.artista {
 
     /* ── LAYOUT: 2 columnas, sidebar visible ── */
     .caja-contenedor-principal {
-        grid-template-columns: 240px 1fr;
-        grid-template-rows: 60px 1fr 10%;
+        grid-template-columns: 32% 1fr;
+        grid-template-rows: 0.08fr 3fr 0.09fr;
         grid-template-areas:
             "header header header"
             "l-content r-content r-content"
@@ -597,6 +596,7 @@ img.artista {
 
     /* ── HEADER TABLET ── */
     .header {
+        grid-area: header;
         padding: 8px 16px;
         position: sticky;
         top: 0;
@@ -682,6 +682,7 @@ img.artista {
 
     /* ── SIDEBAR IZQUIERDA: totalmente visible ── */
     .contenedor-izquierdo {
+        grid-area: l-content;
         display: flex;
         flex-direction: column;
         background-color: #121212;
@@ -747,12 +748,11 @@ img.artista {
 
     /* ── CONTENIDO DERECHO ── */
     .contenedor-derecho {
+        grid-area: r-content;
         background-color: #121212;
         border-radius: 8px;
         padding: 20px 0 20px 20px;
-        overflow-y: auto;
-        overflow-x: hidden;
-        height: calc(100vh - 60px - 80px - 18px);
+
     }
 
     /* Cabeceras de sección */
