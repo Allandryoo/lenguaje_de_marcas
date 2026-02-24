@@ -5,64 +5,74 @@
 p {
     box-sizing: content-box;
 }
-
 body {
     margin: 0;
     background-color: rgb(0, 0, 0);
 }
 .caja-contenedor-principal {
     height: 100vh;
+    overflow: hidden;
     background-color: rgb(0, 0, 0);
     display: grid;
     grid-template-columns: 20% 1fr;
     grid-template-rows: 7% 1fr 8%;
-    grid-template-areas: 
-        "header header header header"
-        "l-content r-content r-content r-content"
-        "footer footer footer footer"
+    grid-template-areas:
+        "header header"
+        "l-content r-content"
+        "footer footer"
     ;
     gap: 1vh;
     padding: 0.5vh;
 }
-/* =============================================
-   MÓVIL: 600px o menos
-   ============================================= */
-/*Cabecera de la pagina*/
+
+/* Header */
 .header {
     grid-area: header;
     position: relative;
     display: flex;
-    align-items: center; 
-    justify-content: space-between; 
+    align-items: center;
+    justify-content: space-between;
     background-color: #000;
     padding: 8px 16px;
-    color: #b3b3b3; 
+    color: #b3b3b3;
 }
 .header img {
-    width: 30px;
-    height: 30px;
-}
-/*Elementos de la cabecera*/
-.logo {
-    background-color: #ffffff;
+    width: 2.5rem;
     height: auto;
-    width: auto;
-    border-radius: 50%;
-    justify-self: flex-start;
 }
+
+/* Logo de Spotify */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.logo img {
+    background-color: white;
+    width: 2.5rem;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Icono de casa */
 .casa {
+
     background-color: #1f1f1f;
     border-radius: 50%;
-    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.casa img {
+    width: 2.5rem;
+    height: auto;
+}
+/* Barra de búsqueda */
 .buscador {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-grow: 1;
+    width: 100%;
     max-width: 500px;
     margin: 0 20px;
 }
@@ -80,13 +90,15 @@ body {
     background-color: #1f1f1f;
     border-radius: 500px;
     padding: 6px 12px;
-    flex-grow: 1;
+    width: 100%;
     border: 1px solid transparent;
 }
 .barra:hover {
     background-color: #2a2a2a;
     border-color: #333;
 }
+
+/* Botones de la derecha del header */
 .header-button {
     display: flex;
     align-items: center;
@@ -102,6 +114,8 @@ body {
     color: white;
     transform: scale(1.04);
 }
+
+/* Botón "Iniciar sesión" */
 .inicio {
     background-color: white;
     color: black;
@@ -115,20 +129,20 @@ body {
 .inicio:hover {
     transform: scale(1.05);
 }
-/*Lado izquierda*/
+
+/* Contenedor izquierdo */
 .contenedor-izquierdo {
     grid-area: l-content;
-    background-color: rgb(243, 39, 192);
-    border-radius: 5px;
-    flex-basis: 350px;
     background-color: #121212;
     border-radius: 8px;
     padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    overflow: hidden;
 }
-/*Contenido lado izquierdo*/
+
+/* Cabecera de "Tu biblioteca" */
 .sec-izq-cab {
     display: flex;
     justify-content: space-between;
@@ -155,6 +169,8 @@ body {
 .boton-crear-biblioteca:hover {
     background-color: #353535;
 }
+
+/* Zona de contenido con scroll */
 .contenido {
     display: flex;
     flex-direction: column;
@@ -163,6 +179,8 @@ body {
 .contenido-sec-izq {
     overflow: scroll;
 }
+
+/* Cajitas de "Crea tu lista" y "Encuentra pódcasts" */
 .sec-izq-caja {
     background-color: #1f1f1f;
     border-radius: 8px;
@@ -192,6 +210,8 @@ body {
     font-size: 14px;
     margin-bottom: 16px;
 }
+
+/* Pie de la columna izquierda */
 .sec-izq-pie {
     margin-top: auto;
     padding-bottom: 32px;
@@ -210,6 +230,8 @@ body {
 .contenedor-enlaces a:hover {
     text-decoration: underline;
 }
+
+/* Botón de idioma */
 .boton-idioma-global {
     background-color: transparent;
     color: white;
@@ -218,13 +240,11 @@ body {
     border-radius: 20px;
     font-weight: bold;
     font-size: 13px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 6px;
     cursor: pointer;
-    width: fit-content;
 }
-
 .boton-idioma-global:hover {
     border-color: white;
     transform: scale(1.04);
@@ -232,26 +252,47 @@ body {
 .boton-idioma-global img {
     width: 2vh;
     height: 2vh;
-
 }
-/*Lado derecho*/
+
+/* Contenedor derecho */
 .contenedor-derecho {
     grid-area: r-content;
     background-color: #121212;
     border-radius: 5px;
-    overflow: scroll;
-    padding: 20px 0 20px 20px; 
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 20px 0 20px 20px;
 }
-/*Contenido lado derecho*/
+
+/* Scrollbar personalizada */
+.contenedor-derecho::-webkit-scrollbar,
+.contenedor-sec-izq::-webkit-scrollbar {
+    width: 8px;
+}
+.contenedor-derecho::-webkit-scrollbar-track,
+.contenedor-sec-izq::-webkit-scrollbar-track {
+    background: #121212;
+}
+.contenedor-derecho::-webkit-scrollbar-thumb,
+.contenedor-sec-izq::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+.contenedor-derecho::-webkit-scrollbar-thumb:hover,
+.contenedor-sec-izq::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+/* Cabecera de sección */
 .cabecera-cancion {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 15px;
 }
-.cabecera-cancion h2 { 
+.cabecera-cancion h2 {
     color: #b3b3b3;
-    font-size: 1.4rem; 
+    font-size: 1.4rem;
     margin: 0;
 }
 .cabecera-cancion a {
@@ -261,57 +302,51 @@ body {
     text-decoration: underline;
     color: #b3b3b3;
 }
-.mostrar-todos { 
-    color: #b3b3b3; 
-    font-size: 0.85rem; 
-    text-decoration: none; 
-    font-weight: bold; 
+.mostrar-todos {
+    color: #b3b3b3;
+    font-size: 0.85rem;
+    text-decoration: none;
+    font-weight: bold;
     margin-right: 30px;
 }
-.mostrar-todos:hover { 
-    text-decoration: underline; 
+.mostrar-todos:hover {
+    text-decoration: underline;
 }
-.contenido-cancion {
-    display: flex;   
-    gap: 24px;    
-    overflow-x: auto;          
-    overflow-y: hidden;   
-    padding-bottom: 10px;      
 
+/* Fila de tarjetas con scroll horizontal */
+.contenido-cancion {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
 }
 .contenido-cancion::-webkit-scrollbar {
     display: none;
 }
-.contenedor-derecho::-webkit-scrollbar {
-    width: 8px;
-}
-.contenedor-derecho::-webkit-scrollbar-track {
-    background: #121212;
-}
-.contenedor-derecho::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 4px;
-}
-.contenedor-derecho::-webkit-scrollbar-thumb:hover {
-    background: #888;
-}
+
+/* Tarjeta individual */
 .tarjeta {
     background-color: #181818;
     padding: 16px;
     border-radius: 9px;
     cursor: pointer;
+    width: 160px;
+    min-width: 160px;
 }
-.tarjeta:hover { 
-    background-color: #282828; 
+.tarjeta:hover {
+    background-color: #282828;
 }
-
 .tarjeta img {
-    width: 16vh;
-    height: 16vh;
+    width: 100%;
+    height: 128px;
+    object-fit: cover;
     border-radius: 4px;
     margin-bottom: 12px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
+
+/* Etiqueta "E" de explícito */
 .mini {
     background-color: #b3b3b3;
     color: #121212;
@@ -336,31 +371,79 @@ body {
     margin: 0;
     font-weight: 500;
 }
+
+/* Imágenes globales */
 img {
-    width: 16vh;
-    height: 16vh;
+    width: 100%;
+    height: auto;
 }
 img.artista {
     border-radius: 50%;
 }
+
 .creditos {
     color: white;
     display: flex;
     justify-content: space-between;
+    padding: 40px 20px 24px 0;
+    gap: 20px;
 }
 .contenido-creditos {
     display: flex;
     flex-direction: column;
 }
+.contenido-creditos P {
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: white;
+    margin: 0 0 12px 0;
+}
 .contenido-creditos a {
     color: #b3b3b3;
     text-decoration: none;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
 }
 .contenido-creditos a:hover {
     color: white;
     text-decoration: underline;
 }
-/*Pie de la pagina*/
+.logo-pie {
+    display: flex;
+    gap: 12px;
+}
+.logo-ig,
+.logo-tw,
+.logo-fb{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #1f1f1f;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-ig:hover,
+.logo-tw:hover,
+.logo-fb:hover{
+    background-color: #696969;
+    cursor: pointer;
+}
+.logo-ig img,
+.logo-tw img,
+.logo-fb img{
+    width: 20px;
+    height: 20px;
+}
+.derecho-pie {
+    border-top: 1px solid #333;
+    padding: 16px 20px 48px 0;
+    color: #6a6a6a;
+    font-size: 0.7rem;
+}
+
+/* Footer */
 .footer {
     grid-area: footer;
     background: linear-gradient(to right, #ae2896, #509bf5);
@@ -389,62 +472,49 @@ img.artista {
 .footer button:hover {
     transform: scale(1.05);
 }
+
 @media (max-width: 600px) {
 
-    /* Layout: una sola columna, sin sidebar */
     .caja-contenedor-principal {
-        height: 100vh;
         grid-template-columns: 1fr;
-        grid-template-rows: 56px 1fr 7%;
+        grid-template-rows: 3.5rem 1fr 7%;
         grid-template-areas:
             "header"
             "r-content"
-            "footer"    
+            "footer"
         ;
         gap: 5px;
         padding: 5px;
-        height: auto;
-        min-height: 100vh;
     }
 
-    /* ── HEADER MÓVIL ── */
     .header {
         padding: 10px 16px;
         position: sticky;
         top: 0;
         z-index: 100;
-        background-color: #000;
     }
-
-    /* Ocultamos buscador y links del header */
     .buscador,
     .header-button .sec-derecha {
         display: none;
     }
-
-    /* Logo más grande */
-    .logo {
-        background-color: white;
-        display: flex;
-        align-items: center;
+    .logo::after {
+        content: "Spotify";
+        font-weight: bold;
+        font-size: 1rem;
+        color: white;
     }
-    .logo img {
-        width: 40px;
-        height: auto;
-        border-radius: 0;
-    }
-
-    /* El botón "Iniciar sesión" se convierte en "Open App" */
     .inicio {
         padding: 8px 20px;
-        font-size: 13px;
+        font-size: 0;
         white-space: nowrap;
     }
+    .inicio::after {
+        content: "Open App";
+        font-size: 13px;
+    }
 
-    /* Icono hamburguesa (simulado con CSS, ya que no tienes el icono) */
     .header-button {
         gap: 12px;
-        align-items: center;
     }
     .header-button::after {
         content: '☰';
@@ -453,22 +523,15 @@ img.artista {
         cursor: pointer;
     }
 
-    /* ── SIDEBAR: oculta en móvil ── */
     .contenedor-izquierdo {
         display: none;
     }
 
-    /* ── CONTENIDO DERECHO ── */
     .contenedor-derecho {
-        grid-area: r-content;
-        background-color: #121212;
-        overflow: scroll;
         border-radius: 0;
         padding: 20px 16px;
-        overflow: scroll;
     }
 
-    /* Cabecera de sección */
     .cabecera-cancion {
         margin-bottom: 12px;
     }
@@ -478,201 +541,129 @@ img.artista {
         font-weight: 700;
     }
     .mostrar-todos {
-        display: none; /* Spotify móvil no muestra este link */
-    }
-
-    /* ── TARJETAS: 2 visibles + scroll horizontal ── */
-    .contenido-cancion {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: calc(50% - 8px); /* 2 tarjetas visibles */
-        gap: 12px;
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding-bottom: 16px;
-        margin-bottom: 24px;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-    }
-    .contenido-cancion::-webkit-scrollbar {
         display: none;
     }
 
+    .contenido-cancion {
+        gap: 12px;
+        padding-bottom: 16px;
+        margin-bottom: 24px;
+    }
     .tarjeta {
-        scroll-snap-align: start;
-        min-width: unset;
-        width: 100%;
+        width: 45%;
+        min-width: 45%;
         padding: 10px;
         border-radius: 8px;
     }
-
-    /* Imagen ocupa todo el ancho de la tarjeta */
-    .tarjeta img,
-    .contenido-cancion img {
-        width: 100%;
+    .tarjeta img {
         height: auto;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        border-radius: 4px;
-        margin-bottom: 8px;
+        min-height: 100px;
     }
-
-    img {
-        width: 100%;
-        height: auto;
-    }
-
-    img.artista {
-        border-radius: 50%;
-    }
-
     .tarjeta h3 {
         font-size: 0.85rem;
         color: white;
     }
     .tarjeta p {
         font-size: 0.78rem;
-        color: #b3b3b3;
     }
+
     .creditos {
-        display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        gap: 24px;
     }
-    /* ── FOOTER FIJO ABAJO (banner de registro) ── */
+    .logo-pie {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
     .footer {
-        grid-area: footer;
-        background: linear-gradient(to right, #ae2896, #509bf5);
         position: sticky;
         bottom: 0;
-        border-radius: 5px;
-        overflow: hidden;
-        padding: 0 1%;
-        display: flex;
-        justify-content: space-between;
         gap: 10px;
-        align-items: center;
-        color: white;
     }
-
     .footer div {
-        flex: 1;
+        width: 100%;
     }
-
     .footer p:first-child {
-        font-size: 0.8rem;
         font-weight: 700;
         margin-bottom: 4px;
     }
-
     .footer p:last-child {
         font-size: 0.72rem;
-        display: block; /* visible en móvil como Spotify */
         line-height: 1.3;
     }
-
     .footer button {
         display: none;
     }
 }
-/* =============================================
-   TABLET: 601px — 1024px
-   ============================================= */
+
 @media (max-width: 1024px) and (min-width: 601px) {
 
-    /* ── LAYOUT: 2 columnas, sidebar visible ── */
     .caja-contenedor-principal {
         grid-template-columns: 32% 1fr;
-        grid-template-rows: 0.08fr 3fr 0.09fr;
+        grid-template-rows: 8% 1fr 9%;
         grid-template-areas:
-            "header header header"
-            "l-content r-content r-content"
-            "footer footer footer";
+            "header header"
+            "l-content r-content"
+            "footer footer";
         gap: 6px;
         padding: 6px;
-        height: auto;
-        min-height: 100vh;
     }
 
-    /* ── HEADER TABLET ── */
     .header {
-        grid-area: header;
-        padding: 8px 16px;
         position: sticky;
         top: 0;
         z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         gap: 12px;
     }
 
-    /* Logo redondo pequeño */
-    .logo {
-        flex-shrink: 0;
-    }
-    .logo img {
-        width: 28px;
-        height: 28px;
-    }
-
-    /* Buscador: solo iconos casa y lupa, sin input expandido */
-    .buscador {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex-grow: 0;
-        margin: 0;
-        max-width: unset;
-    }
     .barra {
-        display: none; /* Ocultamos la barra de texto */
-    }
-    .casa {
-        background-color: #1f1f1f;
-        border-radius: 50%;
-        padding: 8px;
+        display: none;
     }
 
-    /* Icono lupa independiente (igual que casa) */
-    .buscador > img:not(.casa img) {
+    .buscador {
+        gap: 8px;
+        width: auto;
+        max-width: none;
+        margin: 0;
+    }
+    .buscador::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
         background-color: #1f1f1f;
-        border-radius: 50%;
-        padding: 8px;
-        width: 36px;
-        height: 36px;
+        border-radius: 50%; 
+        background-image: url("../img/lupa.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 18px;
+        cursor: pointer;
+    }
+    .buscador::after:hover {
+        background-color: #2a2a2a;
     }
 
-    /* Links del header: mostramos Instalar app, Registrarte e Iniciar sesión */
     .header-button {
-        display: flex;
-        align-items: center;
         gap: 16px;
         margin-left: auto;
     }
-
-    /* Ocultamos Premium, Asistencia, Descargar */
     .header-button .sec-derecha:nth-child(1),
     .header-button .sec-derecha:nth-child(2),
     .header-button .sec-derecha:nth-child(3) {
         display: none;
     }
-
-    /* Mostramos: Instalar app (4), Registrarte (5) e Iniciar sesión */
     .header-button .sec-derecha:nth-child(4),
     .header-button .sec-derecha:nth-child(5) {
         display: inline;
         font-size: 13px;
     }
 
-    /* Botón iniciar sesión */
     .inicio {
         padding: 10px 24px;
         font-size: 13px;
         font-weight: 700;
     }
-
-    /* Icono hamburguesa */
     .header-button::after {
         content: '☰';
         color: white;
@@ -680,21 +671,7 @@ img.artista {
         cursor: pointer;
     }
 
-    /* ── SIDEBAR IZQUIERDA: totalmente visible ── */
-    .contenedor-izquierdo {
-        grid-area: l-content;
-        display: flex;
-        flex-direction: column;
-        background-color: #121212;
-        border-radius: 8px;
-        padding: 16px;
-    }
-
-    /* Cabecera de biblioteca */
     .sec-izq-cab {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         margin-bottom: 16px;
     }
     .texto-biblioteca {
@@ -704,17 +681,12 @@ img.artista {
     .boton-crear-biblioteca {
         font-size: 1rem;
     }
-
-    /* Cajas de contenido */
     .contenido {
-        display: flex;
-        flex-direction: column;
         gap: 12px;
         overflow: visible;
     }
     .sec-izq-caja {
         padding: 16px;
-        border-radius: 8px;
     }
     .titulo-izq {
         font-size: 15px;
@@ -722,20 +694,15 @@ img.artista {
     .descripcion-izq {
         font-size: 13px;
     }
-
-    /* Pie de la sidebar */
-    .contenedor-sec-izq{
+    .contenedor-sec-izq {
         overflow: scroll;
     }
     .sec-izq-pie {
         display: flex;
         flex-direction: column;
-        margin-top: auto;
         padding-bottom: 16px;
     }
     .contenedor-enlaces {
-        display: flex;
-        flex-wrap: wrap;
         gap: 8px 10px;
         margin-bottom: 16px;
     }
@@ -746,117 +713,71 @@ img.artista {
         font-size: 12px;
     }
 
-    /* ── CONTENIDO DERECHO ── */
     .contenedor-derecho {
-        grid-area: r-content;
-        background-color: #121212;
         border-radius: 8px;
-        padding: 20px 0 20px 20px;
-
     }
 
-    /* Cabeceras de sección */
     .cabecera-cancion h2 {
         color: white;
         font-size: 1.25rem;
         font-weight: 700;
     }
     .mostrar-todos {
-        display: inline; /* visible en tablet */
-        color: #b3b3b3;
+        display: inline;
         font-size: 0.8rem;
     }
 
-    /* Tarjetas: ~3 visibles con scroll horizontal */
     .contenido-cancion {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: calc(33.33% - 16px); /* 3 tarjetas visibles */
         gap: 12px;
-        overflow-x: auto;
         padding-bottom: 16px;
         margin-bottom: 24px;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
     }
-    .contenido-cancion::-webkit-scrollbar {
-        display: none;
-    }
-
     .tarjeta {
-        scroll-snap-align: start;
-        min-width: unset;
-        width: 100%;
+        width: 30%;
+        min-width: 30%;
         padding: 12px;
     }
-
-    .tarjeta img,
-    .contenido-cancion img {
-        width: 100%;
+    .tarjeta img {
         height: auto;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        border-radius: 4px;
-        margin-bottom: 10px;
+        min-height: 90px;
     }
-
-    img {
-        width: 100%;
-        height: auto;
-    }
-
-    img.artista {
-        border-radius: 50%;
-    }
-
     .tarjeta h3 {
         font-size: 0.9rem;
         color: white;
     }
     .tarjeta p {
         font-size: 0.78rem;
-        color: #b3b3b3;
     }
     .creditos {
-        display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        gap: 24px;
     }
+    .logo-pie {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
     .footer {
-        grid-area: footer;
-        background: linear-gradient(to right, #ae2896, #509bf5);
-        border-radius: 5px;
         position: sticky;
         bottom: 0;
-        padding: 0 1%;
-        display: flex;
-        justify-content: space-between;
         gap: 10px;
-        align-items: center;
-        color: white;
     }
-
     .footer div {
-        flex: 1;
+        width: 100%;
     }
-
     .footer p:first-child {
         font-size: 0.85rem;
         font-weight: 700;
         margin-bottom: 4px;
     }
-
     .footer p:last-child {
-        display: block;
         font-size: 0.78rem;
         line-height: 1.4;
     }
-
     .footer button {
         padding: 12px 28px;
         font-size: 14px;
         font-weight: 700;
         white-space: nowrap;
-        flex-shrink: 0;
     }
 }
